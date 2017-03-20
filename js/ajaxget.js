@@ -9,8 +9,16 @@ $(function () {
 	/**
 	 * Orders from generateur_speedbouffe
 	 */
-	$.ajax({
+	$.get(
+		'../data/generateur_speedbouffe/script.php',
+		'false',
+		'getAllOrders',
+		'json'
+	);
 
-	});
+	function getAllOrders(data){
+		console.log("TEST");
+		console.log(data);
+	}
 
 });
