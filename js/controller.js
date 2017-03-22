@@ -3,7 +3,7 @@
  */
 
 app.controller('commandesCtrl', function ($scope) {
-  $scope.toto = "test";
+  $scope.nbCommandes = 52;
 
 });
 

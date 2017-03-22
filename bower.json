@@ -1,14 +1,17 @@
 {
-  "name": "startbootstrap-sb-admin-2",
-  "homepage": "http://startbootstrap.com/template-overviews/sb-admin-2/",
-  "version": "3.3.7+1",
+  "name": "speedbouffe",
+  "homepage": "https://github.com/badr-dev/speedbouffe",
   "authors": [
-    "David Miller"
+    "BadRon"
   ],
-  "description": "A free, open source, Bootstrap admin theme created by Start Bootstrap",
+  "description": "SpeedBouffe Restaurant - Open 24/24",
+  "main": "index.html",
   "keywords": [
+    "angular",
+    "js",
+    "javascript",
     "bootstrap",
-    "theme"
+    "etna"
   ],
   "license": "MIT",
   "ignore": [
@@ -16,31 +19,20 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "pages",
-    "index.html",
-    "/js"
-  ],
-  "main": [
-    "dist/css/sb-admin-2.css",
-    "dist/css/sb-admin-2.min.css",
-    "dist/js/sb-admin-2.js",
-    "dist/js/sb-admin-2.min.js"
+    "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.7",
-    "datatables": "~1.10.4",
+    "angular-route": "^1.6.3",
+    "angular": "^1.6.3",
+    "bootstrap-social": "~4.8.0",
     "datatables-plugins": "~1.0.1",
+    "datatables-responsive": "1.0.6",
+    "eve-raphael": "0.5.0",
     "flot": "~0.8.3",
-    "font-awesome": "~4.6.3",
+    "flot.tooltip": "~0.8.4",
     "holderjs": "~2.4.1",
     "metisMenu": "~1.1.3",
-    "morrisjs": "~0.5.1",
-    "datatables-responsive": "1.0.6",
-    "bootstrap-social": "~4.8.0",
-    "flot.tooltip": "~0.8.4"
-  },
-  "resolutions": {
-    "font-awesome": "~4.6.3"
+    "mocha": "~1.17.1",
+    "morrisjs": "~0.5.1"
   }
 }
