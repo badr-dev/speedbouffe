@@ -33,6 +33,7 @@
     "holderjs": "~2.4.1",
     "metisMenu": "~1.1.3",
     "mocha": "~1.17.1",
-    "morrisjs": "~0.5.1"
+    "morris.js": "~0.5.1",
+    "angular-morris": "^1.3.0"
   }
 }
