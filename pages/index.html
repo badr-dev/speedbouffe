@@ -32,41 +32,40 @@
         </div>
     </div>
     <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
-                    <div class="pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                Actions
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li><a href="#">Action</a>
-                                </li>
-                                <li><a href="#">Another action</a>
-                                </li>
-                                <li><a href="#">Something else here</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div id="morris-area-chart"></div>
-                </div>
-                <!-- /.panel-body -->
+
+    <!--<div class="commandes">
+        <div class="commande" ng-repeat="commande in commandes">
+        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Commande n°</button>
+        <div uib-collapse="!isCollapsed">
+            <br>
+            <div class="well well-lg" ng-repeat="(key_detail, detail) in commande.Details_commande">
+                Repas : {{ detail['Commande' + (key_detail + 1)].Repas }} <br>
+                Nom : {{ detail['Commande' + (key_detail + 1)].Nom }} <br>
+                Prénom : {{ detail['Commande' + (key_detail + 1)].Prenom }} <br>
+                Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }} <br>
             </div>
-            <!-- /.panel -->
         </div>
-        <!-- /.col-lg-8 -->
-    </div>
-    <!-- /.row -->
+            <hr>
+        </div>
+    </div>-->
+
+    <ul class="nav in" id="side-menu">
+        <li class="active" ng-repeat="commande in commandes">
+            <a href="" ng-click="isCollapsed = !isCollapsed">
+                - Commande n°<span class="fa"><i ng-class="isCollapsed ? 'fa-arrow-down' : 'fa-arrow-right'"></i></span>
+            </a>
+            <ul uib-collapse="!isCollapsed">
+                <li ng-repeat="(key_detail, detail) in commande.Details_commande">
+                    Repas : {{ detail['Commande' + (key_detail + 1)].Repas }} <br>
+                    Nom : {{ detail['Commande' + (key_detail + 1)].Nom }} <br>
+                    Prénom : {{ detail['Commande' + (key_detail + 1)].Prenom }} <br>
+                    Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }} <br>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
+    </ul>
+
+
 </div>
 <!-- /#page-wrapper -->

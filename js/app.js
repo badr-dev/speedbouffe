@@ -5,5 +5,7 @@
 'use strict';
 
 var app = angular.module('app', [
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap',
+  'angular.morris'
 ]);
