@@ -3,7 +3,6 @@
  */
 
 app.controller('commandesCtrl', function ($scope) {
-  $scope.nbCommandes = 1;
 
   $scope.isCollapsed = false;
 
@@ -101,6 +100,8 @@ app.controller('commandesCtrl', function ($scope) {
       ]
     }
   };
+
+	$scope.nbCommandes = $scope.commandes.length;
 
 });
 
