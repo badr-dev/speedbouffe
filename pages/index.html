@@ -34,7 +34,7 @@
     <!-- /.row -->
 
     <ul class="nav in" id="side-menu">
-        <li class="active bg-danger" ng-repeat="(index, commande) in commandes">
+        <li class="active" ng-repeat="(index, commande) in commandes">
             <a href="" ng-click="isCollapsed = !isCollapsed">
                 <i class="fa fa-cutlery" aria-hidden="true"></i> Commande n°{{ index }} - {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }} | Status : A valider <span class="fa fa-commande"><i ng-class="isCollapsed ? 'fa-arrow-down' : 'fa-arrow-right'"></i></span>
             </a>
