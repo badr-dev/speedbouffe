@@ -101,7 +101,7 @@ app.controller('commandesCtrl', function ($scope) {
     }
   };
 
-	$scope.nbCommandes = $scope.commandes.length;
+	// $scope.nbCommandes = $scope.commandes.length;
 
 });
 
