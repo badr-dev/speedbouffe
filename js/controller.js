@@ -8,7 +8,7 @@ app.controller('commandesCtrl', function ($scope) {
   $scope.isCollapsed = false;
 
   $scope.commandes = {
-    "Commande1": {
+    1: {
       "Acheteur": {
         "Civilite": "Mademoiselle",
         "Nom": "Vallie",
@@ -54,7 +54,7 @@ app.controller('commandesCtrl', function ($scope) {
         }
       ]
     },
-    "Commande2": {
+    2: {
       "Acheteur": {
         "Civilite": "Mademoiselle",
         "Nom": "Vallie",
@@ -105,8 +105,6 @@ app.controller('commandesCtrl', function ($scope) {
 });
 
 app.controller('statsCtrl', function ($scope) {
-
-
 
   $scope.data = [
     { y: "2006", a: 100 },
