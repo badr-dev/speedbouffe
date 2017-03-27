@@ -12,12 +12,19 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Détail de commande n°{{ commandeId }}
+                    Commande n°{{ commandeId }}
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-
+                            <div class="form-group">
+                                <label>
+                                    Acheteur
+                                </label>
+                                <p class="form-control-static">
+                                    {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }}
+                                </p>
+                            </div>
                         </div>
                         <div class="col-lg-6">
 
