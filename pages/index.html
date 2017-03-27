@@ -36,11 +36,11 @@
     <ul class="nav in" id="side-menu">
         <li class="active" ng-repeat="(index, commande) in commandes">
             <a href="" ng-click="isCollapsed = !isCollapsed">
-                <i class="fa fa-cutlery" aria-hidden="true"></i> Commande n°{{ index }} - {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }} - {{ commande.Details_commande.length }} commandes <span class="fa fa-commande"><i ng-class="isCollapsed ? 'fa-arrow-down' : 'fa-arrow-right'"></i></span>
+                <i class="fa fa-cutlery" aria-hidden="true"></i> Commande n°{{ index }} - {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }} - {{ commande.Details_commande.length }} commandes <span class="fa fa-commande"><i ng-class="isCollapsed ? 'fa fa-arrow-down' : 'fa fa-arrow-right'"></i></span>
             </a>
             <ul uib-collapse="!isCollapsed">
                 <li ng-repeat="(key_detail, detail) in commande.Details_commande">
-                    Repas : {{ detail['Commande' + (key_detail + 1)].Repas }} <br>
+                    Plat commandé : {{ detail['Commande' + (key_detail + 1)].Repas }} <br>
                     Nom : {{ detail['Commande' + (key_detail + 1)].Nom }} <br>
                     Prénom : {{ detail['Commande' + (key_detail + 1)].Prenom }} <br>
                     Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }} <br>
