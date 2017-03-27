@@ -62,11 +62,14 @@
                         <div class="col-lg-6">
                             <h3>Détail de la commande</h3>
                             <div class="form-group" ng-repeat="(index, detail) in commande.Details_commande">
+
+                                detail
+
                                 <label>
                                     Sous-commande n°{{ index + 1 }}
                                 </label>
                                 <p class="form-control-static">
-                                    Pour {{ detail['Commande' + index + 1] }} {{ detail['Commande' + index + 1].Prenom }} {{ detail['Commande' + index + 1].Nom | uppercase }} ({{ detail['Commande' + index + 1].Age }} ans)
+                                    Pour {{ detail['Commande' + index + 1].Nom }} {{ detail['Commande' + index + 1].Prenom }} {{ detail['Commande' + index + 1].Nom | uppercase }} ({{ detail['Commande' + index + 1].Age }} ans)
                                 </p>
                                 <p class="form-control-static">
                                     Repas commandé : {{ detail['Commande' + index + 1].Repas }}
