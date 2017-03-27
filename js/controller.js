@@ -243,6 +243,11 @@ app.controller('commandesCtrl', function ($scope) {
 
 });
 
+app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams) {
+	var param = $routeParams.id;
+	console.log("Test route param : " + param);
+});
+
 app.controller('statsCtrl', function ($scope) {
 
   $scope.data = [
