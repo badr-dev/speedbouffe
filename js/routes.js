@@ -9,6 +9,10 @@ app.config(['$routeProvider',
         templateUrl: 'pages/index.html',
         controller: 'commandesCtrl'
       })
+      .when('/commandes/:id', {
+        templateUrl: 'pages/detail_commande.html',
+        controller: 'detailCommandeCtrl'
+      })
       .when('/statistiques', {
         templateUrl: 'pages/stats.html',
         controller: 'statsCtrl'
