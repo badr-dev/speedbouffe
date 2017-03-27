@@ -17,16 +17,34 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
+                            <h2>Information sur la commande</h2>
                             <div class="form-group">
                                 <label>
                                     Acheteur
                                 </label>
                                 <p class="form-control-static">
-                                    {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }}
+                                    {{ commande.Acheteur.Civilite }} {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }}
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Âge
+                                </label>
+                                <p class="form-control-static">
+                                    {{ commande.Acheteur.Age }}
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    E-mail
+                                </label>
+                                <p class="form-control-static">
+                                    {{ commande.Acheteur.Email }}
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-6">
+                            <h2>Détail de la commande</h2>
 
                         </div>
                     </div>
