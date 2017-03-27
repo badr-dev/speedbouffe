@@ -40,7 +40,7 @@
             </a>
             <ul uib-collapse="!isCollapsed">
                 <li ng-repeat="(key_detail, detail) in commande.Details_commande">
-                    Plat n°{{ key_detail + 1 }} : {{ detail['Commande' + (key_detail + 1)].Repas }} | Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }}
+                    <a href="#!/commandes/{{ index }}">Plat n°{{ key_detail + 1 }} : {{ detail['Commande' + (key_detail + 1)].Repas }} | Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }}
                 </li>
             </ul>
             <!-- /.nav-second-level -->
