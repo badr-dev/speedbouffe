@@ -249,8 +249,8 @@ app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams) {
 
 	// TODO Get sur service commande/:id
 
-	$scope.commande = {
-		1: {
+	$scope.commande =
+		{
 			"Acheteur": {
 				"Civilite": "Mademoiselle",
 				"Nom": "Vallie",
@@ -295,8 +295,7 @@ app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams) {
 					}
 				}
 			]
-		}
-	};
+		};
 
 });
 
