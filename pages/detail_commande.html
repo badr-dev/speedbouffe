@@ -66,13 +66,13 @@
                                     Sous-commande n°{{ index + 1 }}
                                 </label>
                                 <p class="form-control-static">
-                                    Pour {{ detail['Commande' + (index + 1)].Nom }} {{ detail['Commande' + index + 1].Prenom }} {{ detail['Commande' + index + 1].Nom | uppercase }} ({{ detail['Commande' + index + 1].Age }} ans)
+                                    Pour {{ detail['Commande' + (index + 1)].Nom }} {{ detail['Commande' + (index + 1)].Prenom }} {{ detail['Commande' + (index + 1)].Nom | uppercase }} ({{ detail['Commande' + (index + 1)].Age }} ans)
                                 </p>
                                 <p class="form-control-static">
-                                    Repas commandé : {{ detail['Commande' + index + 1].Repas }}
+                                    Repas commandé : {{ detail['Commande' + (index + 1)].Repas }}
                                 </p>
                                 <p class="form-control-static">
-                                    Tarif : {{ detail['Commande' + index + 1].Tarif }}
+                                    Tarif : {{ detail['Commande' + (index + 1)].Tarif }}
                                 </p>
                             </div>
                         </div>
