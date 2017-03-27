@@ -38,8 +38,8 @@
             <a href="" ng-click="isCollapsed = !isCollapsed">
                 <i class="fa fa-cutlery" aria-hidden="true"></i> Commande n°{{ index }} | {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }} - {{ commande.Details_commande.length }} commandes - Livraison pour le {{ commande.Infos_commande.Jour }} à {{ commande.Infos_commande.Horaire_livraison }} <span class="fa fa-commande"><i ng-class="isCollapsed ? 'fa fa-arrow-down' : 'fa fa-arrow-right'"></i></span>
             </a>
-            <ul uib-collapse="!isCollapsed">
-                <li ng-repeat="(key_detail, detail) in commande.Details_commande">
+            <ul class="list-group" uib-collapse="!isCollapsed">
+                <li class="list-group-item" ng-repeat="(key_detail, detail) in commande.Details_commande">
                     <a href="#!/commandes/{{ index }}">
                         Plat n°{{ key_detail + 1 }} : {{ detail['Commande' + (key_detail + 1)].Repas }} | Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }}
                     </a>
