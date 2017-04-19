@@ -2,7 +2,7 @@
  * Created by nenroz on 22/03/17.
  */
 
-app.controller('commandesCtrl', function ($scope) {
+app.controller('commandesCtrl', function ($scope, $http) {
 
   $scope.isCollapsed = false;
 
