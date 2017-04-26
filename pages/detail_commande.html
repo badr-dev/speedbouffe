@@ -8,11 +8,11 @@
     </div>
     <!-- /.row -->
 
-    <div class="row">
+    <div class="row" ng-repeat="c in commande">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Commande n°{{ commandeId }}
+                    Commande n°{{ c.id }}
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -23,7 +23,7 @@
                                     Acheteur
                                 </label>
                                 <p class="form-control-static">
-                                    {{ commande.Acheteur.Civilite }} {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }}
+                                    {{ c.acheteur_civilite | civilite }} {{ c.acheteur_prenom }} {{ c.acheteur_nom | uppercase }}
                                 </p>
                             </div>
                             <div class="form-group">
@@ -81,6 +81,8 @@
             </div>
         </div>
     </div>
+
+    <a class="btn btn-primary" ng-href="#!/commandes" role="button">Retour</a>
 
 
 </div>

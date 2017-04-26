@@ -2,299 +2,62 @@
  * Created by nenroz on 22/03/17.
  */
 
-app.controller('commandesCtrl', function ($scope, $http) {
+app.controller('commandesCtrl', function ($scope, Commandes) {
 
   $scope.isCollapsed = false;
 
-  $scope.commandes = {
-    1: {
-      "Acheteur": {
-        "Civilite": "Mademoiselle",
-        "Nom": "Vallie",
-        "Prenom": "Elvis",
-        "Age": 18,
-        "Email": "vallie.elvis@e-corp.com"
-      },
-      "Infos_commande": {
-        "Jour": "2017-02-20",
-        "Horaire_livraison": "08:00",
-        "Paiement_espece": "Non"
-      },
-      "Details_commande": [
-        {
-          "Commande1": {
-            "Repas": "Les trois petits cochons",
-            "Civilite": "Mademoiselle",
-            "Nom": "Vallie",
-            "Prenom": "Elvis",
-            "Age": 18,
-            "Tarif": "Etudiant"
-          }
-        },
-        {
-          "Commande2": {
-            "Repas": "Flageollet fatal",
-            "Civilite": "Monsieur",
-            "Nom": "Roscoe",
-            "Prenom": "Edwardo",
-            "Age": 14,
-            "Tarif": "Etudiant"
-          }
-        },
-        {
-          "Commande3": {
-            "Repas": "Fruits défendus",
-            "Civilite": "Mademoiselle",
-            "Nom": "Federico",
-            "Prenom": "Leora",
-            "Age": 60,
-            "Tarif": "Senior"
-          }
-        }
-      ]
-    },
-    2: {
-      "Acheteur": {
-        "Civilite": "Mademoiselle",
-        "Nom": "Vallie",
-        "Prenom": "Elvis",
-        "Age": 18,
-        "Email": "vallie.elvis@e-corp.com"
-      },
-      "Infos_commande": {
-        "Jour": "2017-02-20",
-        "Horaire_livraison": "08:00",
-        "Paiement_espece": "Non"
-      },
-      "Details_commande": [
-        {
-          "Commande1": {
-            "Repas": "Les trois petits cochons",
-            "Civilite": "Mademoiselle",
-            "Nom": "Vallie",
-            "Prenom": "Elvis",
-            "Age": 18,
-            "Tarif": "Etudiant"
-          }
-        },
-        {
-          "Commande2": {
-            "Repas": "Flageollet fatal",
-            "Civilite": "Monsieur",
-            "Nom": "Roscoe",
-            "Prenom": "Edwardo",
-            "Age": 14,
-            "Tarif": "Etudiant"
-          }
-        },
-        {
-          "Commande3": {
-            "Repas": "Fruits défendus",
-            "Civilite": "Mademoiselle",
-            "Nom": "Federico",
-            "Prenom": "Leora",
-            "Age": 60,
-            "Tarif": "Senior"
-          }
-        }
-      ]
-    },
-		3: {
-			"Acheteur": {
-				"Civilite": "Mademoiselle",
-				"Nom": "Vallie",
-				"Prenom": "Elvis",
-				"Age": 18,
-				"Email": "vallie.elvis@e-corp.com"
-			},
-			"Infos_commande": {
-				"Jour": "2017-02-20",
-				"Horaire_livraison": "08:00",
-				"Paiement_espece": "Non"
-			},
-			"Details_commande": [
-				{
-					"Commande1": {
-						"Repas": "Les trois petits cochons",
-						"Civilite": "Mademoiselle",
-						"Nom": "Vallie",
-						"Prenom": "Elvis",
-						"Age": 18,
-						"Tarif": "Etudiant"
-					}
-				},
-				{
-					"Commande2": {
-						"Repas": "Flageollet fatal",
-						"Civilite": "Monsieur",
-						"Nom": "Roscoe",
-						"Prenom": "Edwardo",
-						"Age": 14,
-						"Tarif": "Etudiant"
-					}
-				},
-				{
-					"Commande3": {
-						"Repas": "Fruits défendus",
-						"Civilite": "Mademoiselle",
-						"Nom": "Federico",
-						"Prenom": "Leora",
-						"Age": 60,
-						"Tarif": "Senior"
-					}
-				}
-			]
-		},
-		4: {
-			"Acheteur": {
-				"Civilite": "Mademoiselle",
-				"Nom": "Vallie",
-				"Prenom": "Elvis",
-				"Age": 18,
-				"Email": "vallie.elvis@e-corp.com"
-			},
-			"Infos_commande": {
-				"Jour": "2017-02-20",
-				"Horaire_livraison": "08:00",
-				"Paiement_espece": "Non"
-			},
-			"Details_commande": [
-				{
-					"Commande1": {
-						"Repas": "Les trois petits cochons",
-						"Civilite": "Mademoiselle",
-						"Nom": "Vallie",
-						"Prenom": "Elvis",
-						"Age": 18,
-						"Tarif": "Etudiant"
-					}
-				},
-				{
-					"Commande2": {
-						"Repas": "Flageollet fatal",
-						"Civilite": "Monsieur",
-						"Nom": "Roscoe",
-						"Prenom": "Edwardo",
-						"Age": 14,
-						"Tarif": "Etudiant"
-					}
-				},
-				{
-					"Commande3": {
-						"Repas": "Fruits défendus",
-						"Civilite": "Mademoiselle",
-						"Nom": "Federico",
-						"Prenom": "Leora",
-						"Age": 60,
-						"Tarif": "Senior"
-					}
-				}
-			]
-		},
-		5: {
-			"Acheteur": {
-				"Civilite": "Mademoiselle",
-				"Nom": "Vallie",
-				"Prenom": "Elvis",
-				"Age": 18,
-				"Email": "vallie.elvis@e-corp.com"
-			},
-			"Infos_commande": {
-				"Jour": "2017-02-20",
-				"Horaire_livraison": "08:00",
-				"Paiement_espece": "Non"
-			},
-			"Details_commande": [
-				{
-					"Commande1": {
-						"Repas": "Les trois petits cochons",
-						"Civilite": "Mademoiselle",
-						"Nom": "Vallie",
-						"Prenom": "Elvis",
-						"Age": 18,
-						"Tarif": "Etudiant"
-					}
-				},
-				{
-					"Commande2": {
-						"Repas": "Flageollet fatal",
-						"Civilite": "Monsieur",
-						"Nom": "Roscoe",
-						"Prenom": "Edwardo",
-						"Age": 14,
-						"Tarif": "Etudiant"
-					}
-				},
-				{
-					"Commande3": {
-						"Repas": "Fruits défendus",
-						"Civilite": "Mademoiselle",
-						"Nom": "Federico",
-						"Prenom": "Leora",
-						"Age": 60,
-						"Tarif": "Senior"
-					}
-				}
-			]
-		}
-  };
+  // $scope.status = null;
+  $scope.commandesList = {};
+	$scope.repasCommandeList = [];
 
-	$scope.nbCommandes = $scope.commandes.length;
+  commandes();
+
+  /**
+	 * Retourne les commandes
+   */
+  function commandes() {
+    Commandes.getCommandes()
+      .then(function (response) {
+        $scope.commandesList = response.data;
+      }, function (error) {
+				console.log(error);
+      });
+  }
+
+  /**
+	 * Retourne les repas rattachés à une commande
+	 *
+   * @param id_commande
+   */
+  $scope.repasCommande = function (id_commande) {
+		Commandes.getRepasCommandeByIdCommande(id_commande)
+			.then(function (response) {
+        $scope.repasCommandeList.push(response.data);
+				console.log(JSON.stringify($scope.repasCommandeList));
+      }, function (error) {
+				console.log(error);
+      })
+  }
 
 });
 
-app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams) {
+app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams, Commandes) {
 
 	$scope.commandeId = $routeParams.id;
 
-	// TODO Get sur service commande/:id
+	$scope.commande = {};
 
-	$scope.commande = {
-		"Acheteur": {
-			"Civilite": "Mademoiselle",
-			"Nom": "Vallie",
-			"Prenom": "Elvis",
-			"Age": 18,
-			"Email": "vallie.elvis@e-corp.com"
-		},
-		"Infos_commande": {
-			"Jour": "2017-02-20",
-			"Horaire_livraison": "08:00",
-			"Paiement_espece": "Non"
-		},
-		"Details_commande": [
-			{
-				"Commande1": {
-					"Repas": "Les trois petits cochons",
-					"Civilite": "Mademoiselle",
-					"Nom": "Vallie",
-					"Prenom": "Elvis",
-					"Age": 18,
-					"Tarif": "Etudiant"
-				}
-			},
-			{
-				"Commande2": {
-					"Repas": "Flageollet fatal",
-					"Civilite": "Monsieur",
-					"Nom": "Roscoe",
-					"Prenom": "Edwardo",
-					"Age": 14,
-					"Tarif": "Etudiant"
-				}
-			},
-			{
-				"Commande3": {
-					"Repas": "Fruits défendus",
-					"Civilite": "Mademoiselle",
-					"Nom": "Federico",
-					"Prenom": "Leora",
-					"Age": 60,
-					"Tarif": "Senior"
-				}
-			}
-		]
-	};
+	getCommande($routeParams.id);
+
+	function getCommande(id_commande) {
+    Commandes.getCommandeByIdCommande(id_commande)
+      .then(function (response) {
+        $scope.commande = response.data;
+        console.log(JSON.stringify($scope.commande));
+      }, function (error) {
+        console.log(error);
+      });
+  }
 
 });
 

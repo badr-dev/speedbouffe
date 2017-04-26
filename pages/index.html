@@ -16,7 +16,7 @@
                             <i class="fa fa-shopping-cart fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{ commandes.length }}</div>
+                            <div class="huge">{{ commandesList.length }}</div>
                             <div>Nouvelles commandes!</div>
                         </div>
                     </div>
@@ -34,21 +34,20 @@
     <!-- /.row -->
 
     <ul class="nav in" id="side-menu">
-        <li class="active" ng-repeat="(index, commande) in commandes">
-            <a href="" ng-click="isCollapsed = !isCollapsed">
-                <i class="fa fa-cutlery" aria-hidden="true"></i> Commande n°{{ index }} | {{ commande.Acheteur.Prenom }} {{ commande.Acheteur.Nom | uppercase }} - {{ commande.Details_commande.length }} commandes - Livraison pour le {{ commande.Infos_commande.Jour }} à {{ commande.Infos_commande.Horaire_livraison }} <span class="fa fa-commande"><i ng-class="isCollapsed ? 'fa fa-arrow-down' : 'fa fa-arrow-right'"></i></span>
+        <li class="active" ng-repeat="(index, commande) in commandesList">
+            <!--<a href="" ng-click="isCollapsed = !isCollapsed; repasCommande(commande.id)">-->
+            <a ng-href="#!/commandes/{{ commande.id }}">
+                <i class="fa fa-cutlery" aria-hidden="true"></i> Commande n°{{ commande.id }} | {{ commande.acheteur_prenom }} {{ commande.acheteur_nom | uppercase }} - X commandes - Commandé à {{ commande.heure_commande }} <span class="fa fa-commande"><i ng-class="isCollapsed ? 'fa fa-arrow-down' : 'fa fa-arrow-right'"></i></span>
             </a>
-            <ul class="list-group" uib-collapse="!isCollapsed">
+            <!--<ul class="list-group" uib-collapse="!isCollapsed">
                 <li class="list-group-item" ng-repeat="(key_detail, detail) in commande.Details_commande">
                     <a href="#!/commandes/{{ index }}">
                         Plat n°{{ key_detail + 1 }} : {{ detail['Commande' + (key_detail + 1)].Repas }} | Tarif : {{ detail['Commande' + (key_detail + 1)].Tarif }}
                     </a>
                 </li>
-            </ul>
-            <!-- /.nav-second-level -->
+            </ul>-->
         </li>
     </ul>
-
 
 </div>
 <!-- /#page-wrapper -->

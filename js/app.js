@@ -9,3 +9,20 @@ var app = angular.module('app', [
   'ui.bootstrap',
   'angular.morris'
 ]);
+
+/* ---------------------------------- */
+// FILTERS
+/* ---------------------------------- */
+
+app.filter('civilite', function () {
+  return function (input) {
+    switch (input) {
+      case 1:
+        return 'Madame';
+      case 2:
+        return 'Monsieur';
+      default:
+        return 'Undefined';
+    }
+  }
+});
