@@ -6,7 +6,6 @@ app.controller('commandesCtrl', function ($scope, Commandes) {
 
   $scope.isCollapsed = false;
 
-  // $scope.status = null;
   $scope.commandesList = {};
 	$scope.repasCommandeList = [];
 
@@ -46,14 +45,26 @@ app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams, Com
 	$scope.commandeId = $routeParams.id;
 
 	$scope.commande = {};
+	$scope.repasCommande = {};
 
 	getCommande($routeParams.id);
+	getRepasCommande($routeParams.id);
 
 	function getCommande(id_commande) {
     Commandes.getCommandeByIdCommande(id_commande)
       .then(function (response) {
         $scope.commande = response.data;
         console.log(JSON.stringify($scope.commande));
+      }, function (error) {
+        console.log(error);
+      });
+  }
+
+  function getRepasCommande(id_commande) {
+    Commandes.getRepasCommandeByIdCommande(id_commande)
+      .then(function (response) {
+        $scope.repasCommande = response.data;
+        console.log(JSON.stringify($scope.repasCommande));
       }, function (error) {
         console.log(error);
       });
@@ -75,4 +86,11 @@ app.controller('statsCtrl', function ($scope) {
   $scope.xaxis = 'y';
   $scope.yaxis = '["a"]';
 
+});
+
+app.controller('SearchCtrl', function ($scope) {
+
+  $scope.searchCommande = function () {
+
+  }
 });

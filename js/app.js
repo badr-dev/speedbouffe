@@ -26,3 +26,29 @@ app.filter('civilite', function () {
     }
   }
 });
+
+app.filter('paiement_type', function () {
+  return function (input) {
+    switch (input) {
+      case 1:
+        return 'Espèce';
+      case 2:
+        return 'Carte bancaire';
+      default:
+        return 'Undefined';
+    }
+  }
+});
+
+app.filter('tarif_type', function () {
+  return function (input) {
+    switch (input) {
+      case 1:
+        return 'Etudiant';
+      case 2:
+        return 'Senior';
+      default:
+        return 'Undefined';
+    }
+  }
+});

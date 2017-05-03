@@ -31,7 +31,7 @@
                                     Âge
                                 </label>
                                 <p class="form-control-static">
-                                    {{ commande.Acheteur.Age }}
+                                    {{ c.acheteur_age }}
                                 </p>
                             </div>
                             <div class="form-group">
@@ -39,7 +39,7 @@
                                     E-mail
                                 </label>
                                 <p class="form-control-static">
-                                    {{ commande.Acheteur.Email }}
+                                    {{ c.acheteur_email }}
                                 </p>
                             </div>
                             <div class="form-group">
@@ -47,32 +47,32 @@
                                     Date de livraison demandée
                                 </label>
                                 <p class="form-control-static">
-                                    Le {{ commande.Infos_commande.Jour }} à {{ commande.Infos_commande.Horaire_livraison }}
+                                    Le {{ c.jour_commande | date : "dd/MM/yyyy 'à' HH:mm" }}
                                 </p>
                             </div>
                             <div class="form-group">
                                 <label>
-                                    Paiement en espèce ?
+                                    Type de paiement
                                 </label>
                                 <p class="form-control-static">
-                                    {{ commande.Infos_commande.Paiement_espece }}
+                                    {{ c.type_payement_id | paiement_type }}
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <h3>Détail de la commande</h3>
-                            <div class="form-group" ng-repeat="(index, detail) in commande.Details_commande">
+                            <div class="form-group" ng-repeat="(i, r) in repasCommande">
                                 <label>
-                                    Sous-commande n°{{ index + 1 }}
+                                    Sous-commande n°1 (réf. {{ r.id }})
                                 </label>
                                 <p class="form-control-static">
-                                    Pour {{ detail['Commande' + (index + 1)].Nom }} {{ detail['Commande' + (index + 1)].Prenom }} {{ detail['Commande' + (index + 1)].Nom | uppercase }} ({{ detail['Commande' + (index + 1)].Age }} ans)
+                                    Pour {{ r.civilite_id | civilite }} {{ r.prenom }} {{ r.nom | uppercase }} ({{ r.age }} ans)
                                 </p>
                                 <p class="form-control-static">
-                                    Repas commandé : {{ detail['Commande' + (index + 1)].Repas }}
+                                    Repas commandé : {{ r.menu_id }}
                                 </p>
                                 <p class="form-control-static">
-                                    Tarif : {{ detail['Commande' + (index + 1)].Tarif }}
+                                    Tarif : {{ r.tarif_id | tarif_type }}
                                 </p>
                             </div>
                         </div>
