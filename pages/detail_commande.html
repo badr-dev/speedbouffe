@@ -63,7 +63,7 @@
                             <h3>Détail de la commande</h3>
                             <div class="form-group" ng-repeat="(i, r) in repasCommande">
                                 <label>
-                                    Sous-commande n°1 (réf. {{ r.id }})
+                                    Sous-commande n°{{ i + 1 }} (réf. {{ r.id }})
                                 </label>
                                 <p class="form-control-static">
                                     Pour {{ r.civilite_id | civilite }} {{ r.prenom }} {{ r.nom | uppercase }} ({{ r.age }} ans)
