@@ -92,7 +92,7 @@ app.controller('statsCtrl', function ($scope, Commandes) {
   var dataJoursCommande = [];
 
   getRepasCommandeListe();
-  getCommandeListe();
+  // getCommandeListe();
 
   function getRepasCommandeListe() {
     Commandes.getRepasCommande()
@@ -123,7 +123,7 @@ app.controller('statsCtrl', function ($scope, Commandes) {
       });
   }
 
-  function getCommandeListe() {
+  /*function getCommandeListe() {
     Commandes.getCommandes()
       .then(function (response) {
         joursCommande = response.data;
@@ -147,7 +147,7 @@ app.controller('statsCtrl', function ($scope, Commandes) {
       }, function (error) {
         console.log(error);
       });
-  }
+  }*/
 
 });
 

@@ -4,7 +4,7 @@
 
 app.service('Commandes', function ($http) {
 
-  var url_base = 'http://79.137.83.73:3000/';
+  var url_base = 'http://79.137.83.73:443/';
 
   this.getCommandes = function () {
     return $http.get(url_base + 'commandes');
