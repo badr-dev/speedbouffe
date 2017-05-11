@@ -69,7 +69,7 @@
                                     Pour {{ r.civilite_id | civilite }} {{ r.prenom }} {{ r.nom | uppercase }} ({{ r.age }} ans)
                                 </p>
                                 <p class="form-control-static">
-                                    Repas commandé : {{ r.menu_id }}
+                                    Repas commandé : {{ r.menu_id | repas }}
                                 </p>
                                 <p class="form-control-static">
                                     Tarif : {{ r.tarif_id | tarif_type }}

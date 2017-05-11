@@ -72,19 +72,82 @@ app.controller('detailCommandeCtrl', function ($scope, $route, $routeParams, Com
 
 });
 
-app.controller('statsCtrl', function ($scope) {
+app.controller('statsCtrl', function ($scope, Commandes) {
 
-  $scope.data = [
-    { y: "2006", a: 100 },
-    { y: "2007", a: 75 },
-    { y: "2008", a: 50 },
-    { y: "2009", a: 75 },
-    { y: "2010", a: 50 },
-    { y: "2011", a: 75 },
-    { y: "2012", a: 100 }
+  var repasCommande = {};
+  var joursCommande = {};
+
+  var dataRepasCommande = [
+    { id: 1, label: "Les trois petits cochons", value: 0 },
+    { id: 2, label: "Flageollet fatal", value: 0 },
+    { id: 3, label: "Fruits défendus", value: 0 },
+    { id: 4, label: "Les délicatesses de la mer", value: 0 },
+    { id: 5, label: "Pot-au-feu glacial", value: 0 },
+    { id: 6, label: "Soupe nature", value: 0 },
+    { id: 7, label: "Amuse-gueules pas drôles", value: 0 },
+    { id: 8, label: "Pâtes au beurre du pauvre", value: 0 },
+    { id: 9, label: "Stinking plateau de fromages", value: 0 }
   ];
-  $scope.xaxis = 'y';
-  $scope.yaxis = '["a"]';
+
+  var dataJoursCommande = [];
+
+  getRepasCommandeListe();
+  getCommandeListe();
+
+  function getRepasCommandeListe() {
+    Commandes.getRepasCommande()
+      .then(function (response) {
+        repasCommande = response.data;
+
+        var menu_id;
+
+        for (var i = 0; i < repasCommande.length; i++) {
+          menu_id = repasCommande[i]['menu_id'];
+
+          for (var j = 0; j < dataRepasCommande.length; j++) {
+            if (dataRepasCommande[j]['id'] == menu_id) {
+              dataRepasCommande[j]['value'] += 1;
+            }
+          }
+        }
+
+        Morris.Donut({
+          element: 'morris-donut-chart',
+          data: dataRepasCommande,
+          resize: true,
+          parseTime:false
+        });
+
+      }, function (error) {
+        console.log(error);
+      });
+  }
+
+  function getCommandeListe() {
+    Commandes.getCommandes()
+      .then(function (response) {
+        joursCommande = response.data;
+
+        for (var i = 0; i < joursCommande.length; i++) {
+          var d = new Date(joursCommande[i]['jour_commande']);
+          console.log(d.getHours() + d.getDate());
+          dataJoursCommande.push({ date: d.getHours() });
+        }
+
+        console.log(JSON.stringify(dataJoursCommande));
+
+        Morris.Area({
+          element: 'morris-area-chart',
+          data: dataJoursCommande,
+          resize: true,
+          parseTime: false,
+          xkey: 'date'
+        });
+
+      }, function (error) {
+        console.log(error);
+      });
+  }
 
 });
 

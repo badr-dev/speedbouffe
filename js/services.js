@@ -14,6 +14,10 @@ app.service('Commandes', function ($http) {
     return $http.get(url_base + 'commandes/' + id_commande)
   };
 
+  this.getRepasCommande = function () {
+    return $http.get(url_base + 'repas_commande');
+  };
+
   this.getRepasCommandeByIdCommande = function (id_commande) {
     return $http.get(url_base + 'repas_commande/' + id_commande);
   };

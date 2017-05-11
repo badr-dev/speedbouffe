@@ -52,3 +52,30 @@ app.filter('tarif_type', function () {
     }
   }
 });
+
+app.filter('repas', function () {
+  return function (input) {
+    switch (input) {
+      case 1:
+        return 'Les trois petits cochons';
+      case 2:
+        return 'Flageollet fatal';
+      case 3:
+        return 'Fruits défendus';
+      case 4:
+        return 'Les délicatesses de la mer';
+      case 5:
+        return 'Pot-au-feu glacial';
+      case 6:
+        return 'Soupe nature';
+      case 7:
+        return 'Amuse-gueules pas drôles';
+      case 8:
+        return 'Pâtes au beurre du pauvre';
+      case 9:
+        return 'Stinking plateau de fromages';
+      default:
+        return 'Undefined';
+    }
+  }
+});
